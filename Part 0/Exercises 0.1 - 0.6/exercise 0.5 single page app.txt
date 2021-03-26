@@ -1,11 +1,17 @@
 title 0.5 single page app
 
-User->Browser: Writes note in form field
-User->Browser: Submits note
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+Server-->Browser: HTML code
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+Server-->Browser: main.js
 note over Browser:
-Event handler form submission
-creates new note, adds to list,
-and then rerenders note list
+Browser starts executing JS code
+that requests JSON data from server
 end note
-Browser->Server: HTTP POST /new_note_spa with JSON data of note
-Server-->Browser: Response: 201 created
+Browser->Server: HTTP GET /exampleapp/data.json
+Server-->Browser: JSON data
+note over Browser:
+JS parses and draws the notes
+end note

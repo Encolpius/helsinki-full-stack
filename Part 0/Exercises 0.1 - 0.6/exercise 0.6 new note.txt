@@ -1,0 +1,11 @@
+title 0.6 new note
+
+User->Browser: Writes note in form field
+User->Browser: Submits note
+note over Browser:
+Event handler form submission
+creates new note, adds to notes,
+and then rerenders note list
+end note
+Browser->Server: HTTP POST /new_note_spa with JSON data of note
+Server-->Browser: Response: 201 created
