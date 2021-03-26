@@ -1,0 +1,26 @@
+title exercise 0.4: new note
+
+User->Browser: Writes note in form field
+User->Browser: Submits note
+Browser->Server: User input
+note over Server:
+Server executes code
+that pushes note content to notes
+end note
+Server-->Browser: HTTP POST 302 redirect
+Browser->Server: HTTP GET /notes
+Server-->Browser: HTML code
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+Server-->Browser: CSS code
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+Server-->Browser: JS code
+note over Browser:
+Browser starts executing js-code
+that requests JSON data from server 
+end note
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+Server-->Browser: JSON content
+note over Browser:
+Browser executes the event handler
+that renders notes to display
+end note
